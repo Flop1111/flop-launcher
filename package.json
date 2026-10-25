@@ -1,0 +1,51 @@
+{
+  "name": "flop-launcher",
+  "version": "1.0.0",
+  "description": "Flop Launcher: unofficial Minecraft launcher with Fabric instances and a Modrinth mod browser",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder",
+    "test": "node test/resolver.test.js"
+  },
+  "dependencies": {
+    "minecraft-launcher-core": "^3.18.2",
+    "msmc": "^5.0.5"
+  },
+  "devDependencies": {
+    "electron": "^37.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "dev.flop.launcher",
+    "productName": "Flop Launcher",
+    "copyright": "Copyright © 2026 Flop Launcher authors",
+    "files": [
+      "src/**/*",
+      "package.json",
+      "build/icon.png"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Flop Launcher",
+      "license": "build/license.txt",
+      "artifactName": "Flop-Launcher-Setup.${ext}"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  },
+  "author": "Flop Launcher authors",
+  "license": "MIT"
+}
