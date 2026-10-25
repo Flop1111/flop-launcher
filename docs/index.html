@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flop Launcher: il launcher per Minecraft Java</title>
+<meta name="description" content="Flop Launcher è un launcher gratuito per Minecraft Java con istanze separate, mod Modrinth con un clic e Java automatico.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%233d8bff'/%3E%3Ctext x='32' y='46' font-size='40' font-family='Arial' font-weight='700' fill='white' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
+<style>
+:root { color-scheme: dark; --accent: #3d8bff; --dim: #94a3c4; --line: rgba(255,255,255,.14); }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; color: #f2f5ff; font: 16px/1.55 "Segoe UI Variable", "Segoe UI", system-ui, sans-serif; background: radial-gradient(120% 80% at 20% 0%, #14295c 0%, #0a1230 50%, #060913 100%) fixed; }
+body::before, body::after { content: ""; position: fixed; z-index: -1; width: 480px; height: 480px; border-radius: 50%; filter: blur(90px); opacity: .4; animation: drift 22s ease-in-out infinite alternate; }
+body::before { background: #2563eb; left: -140px; bottom: -80px; }
+body::after { background: #0ea5e9; right: -150px; top: -120px; animation-delay: -9s; }
+@keyframes drift { to { transform: translate(80px, -50px) scale(1.15); } }
+main { max-width: 880px; margin: 0 auto; padding: 56px 20px 40px; }
+.glass { background: rgba(255,255,255,.07); backdrop-filter: blur(28px) saturate(180%); -webkit-backdrop-filter: blur(28px) saturate(180%); border: 1px solid var(--line); border-radius: 26px; box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 18px 50px rgba(0,0,0,.35); }
+.hero { text-align: center; padding: 52px 24px; }
+.logo { width: 76px; height: 76px; margin: 0 auto 18px; border-radius: 22px; display: grid; place-items: center; font-size: 40px; font-weight: 700; background: linear-gradient(135deg, #5aa2ff, #2f6bff); box-shadow: 0 10px 30px rgba(47,107,255,.45); }
+h1 { margin: 0 0 10px; font-size: clamp(30px, 6vw, 46px); letter-spacing: -.03em; }
+.lead { margin: 0 auto 28px; max-width: 520px; color: var(--dim); font-size: 18px; }
+.dl { display: inline-block; padding: 15px 38px; border-radius: 999px; color: #fff; text-decoration: none; font-weight: 700; font-size: 18px; background: linear-gradient(135deg, #5aa2ff, #2f6bff); box-shadow: 0 10px 30px rgba(47,107,255,.5); transition: transform .15s, box-shadow .25s; }
+.dl:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 14px 40px rgba(47,107,255,.65); }
+.meta { margin: 14px 0 0; color: var(--dim); font-size: 13px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin: 22px 0; }
+.card { padding: 22px; }
+.card h3 { margin: 0 0 6px; font-size: 17px; }
+.card p, .steps li { margin: 0; color: var(--dim); }
+.steps { padding: 26px 30px; }
+.steps h2 { margin: 0 0 12px; font-size: 22px; }
+.steps ol { margin: 0; padding-left: 22px; display: grid; gap: 10px; }
+.steps b { color: #f2f5ff; }
+footer { margin-top: 26px; text-align: center; color: var(--dim); font-size: 12px; line-height: 1.6; }
+footer a { color: var(--dim); }
+</style>
+</head>
+<body>
+<main>
+  <section class="glass hero">
+    <div class="logo">F</div>
+    <h1>Flop Launcher</h1>
+    <p class="lead">Il launcher per Minecraft Java semplice e curato: istanze separate, mod con un clic e Java che si installa da solo.</p>
+    <a id="download" class="dl" href="#">Scarica per Windows</a>
+    <p class="meta">Gratuito · Windows 10 e 11 (64 bit) · serve un account con Minecraft Java Edition</p>
+  </section>
+  <section class="grid">
+    <div class="glass card"><h3>Istanze separate</h3><p>Ogni istanza ha le sue mod, i suoi mondi e le sue impostazioni, senza mescolare niente.</p></div>
+    <div class="glass card"><h3>Mod con un clic</h3><p>Cerca su Modrinth e installa: le dipendenze, come Fabric API, arrivano da sole.</p></div>
+    <div class="glass card"><h3>Java automatico</h3><p>Nessuna installazione da fare: il launcher scarica la versione di Java giusta per ogni Minecraft.</p></div>
+    <div class="glass card"><h3>Accesso Microsoft</h3><p>Accedi una volta sola: la sessione resta salvata in modo cifrato sul tuo computer.</p></div>
+  </section>
+  <section class="glass steps">
+    <h2>Come installarlo</h2>
+    <ol>
+      <li>Scarica il file <b>Flop-Launcher-Setup.exe</b> e aprilo.</li>
+      <li>Se Windows mostra <b>“Windows ha protetto il PC”</b>, è normale per un programma nuovo e non firmato: clicca <b>Maggiori informazioni</b>, poi <b>Esegui comunque</b>.</li>
+      <li>Segui l’installazione e apri Flop Launcher dal Desktop.</li>
+      <li>Accedi con Microsoft, crea un’istanza e premi <b>Gioca</b>. Al primo avvio scarica da solo Java e Minecraft: ci vuole qualche minuto.</li>
+    </ol>
+  </section>
+  <footer>
+    <p>Flop Launcher è un progetto indipendente con licenza MIT. <a id="repo" href="#">Codice sorgente</a></p>
+    <p>NON È UN PRODOTTO UFFICIALE DI MINECRAFT. NON APPROVATO NÉ ASSOCIATO A MOJANG O MICROSOFT.</p>
+  </footer>
+</main>
+<script>
+  // Sostituisci con il tuo nome utente GitHub e il nome del repository.
+  var REPO = ""Flop1111/flop-launcher";
+  document.getElementById("download").href = "https://github.com/" + REPO + "/releases/latest/download/Flop-Launcher-Setup.exe";
+  document.getElementById("repo").href = "https://github.com/" + REPO;
+</script>
+</body>
+</html>
